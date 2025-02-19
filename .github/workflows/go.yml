@@ -17,11 +17,24 @@ jobs:
       with:
         go-version: '1.22.1'
 
-    - name: Build
-      run: go build -v ./...
-
-    - name: Clean
-      run: go clean -cache -testcache -modcache
-
+    - name: Install pkg-config and Dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config
+   
+    - name: Set up PDFium library (Linux)
+      run: |
+          # Download the prebuilt PDFium binary for Linux (x64)
+          sudo curl -L "https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F${PDFIUM_VERSION}/pdfium-linux-x64.tgz" -o pdfium-linux-x64.tgz
+          sudo mkdir -p /opt/pdfium
+          sudo tar -C /opt/pdfium -xvf pdfium-linux-x64.tgz
+          sudo rm pdfium-linux-x64.tgz
+          # Copy the provided pkg-config file (ensure this file exists in your repo)
+          sudo cp ./.github/workflows/pdfium.pc /opt/pdfium/pdfium.pc
+    
     - name: Test
+      env:
+        RUNNING_TESTS: "true"
+        LD_LIBRARY_PATH: "/opt/pdfium/lib"
+        PKG_CONFIG_PATH: "/opt/pdfium"
       run: go test -v ./...

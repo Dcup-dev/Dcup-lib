@@ -30,11 +30,12 @@ func main() {
 	}
 
 	schema := map[string]interface{}{
-		"title":  "string",
-		"auther": "string",
+		"user_name": "string",
+		"email":     "string",
+		"address":   "string",
 	}
 
-	res, err := client.Html.CleanUrl("https://www.kelche.co/blog/go/golang-environment-variables/", schema)
+	res, err := client.Pdf.CleanUlr("https://www.wmaccess.com/downloads/sample-invoice.pdf", schema)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return

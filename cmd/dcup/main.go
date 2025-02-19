@@ -8,6 +8,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/html"
 	"github.com/Dcup-dev/Dcup-lib/internal/json"
 	"github.com/Dcup-dev/Dcup-lib/internal/md"
+	"github.com/Dcup-dev/Dcup-lib/internal/pdf"
 	"github.com/Dcup-dev/Dcup-lib/internal/pptx"
 	"github.com/Dcup-dev/Dcup-lib/internal/xlsx"
 )
@@ -20,6 +21,7 @@ type Dcup struct {
 	Markdown   *md.Client
 	PowerPoint *pptx.Client
 	Sheet      *xlsx.Client
+	Pdf        *pdf.Client
 }
 
 // Config is the user-facing configuration struct.
@@ -76,5 +78,6 @@ func Init(config Config) (*Dcup, error) {
 		Markdown:   md.NewClient(config),
 		PowerPoint: pptx.NewClient(config),
 		Sheet:      xlsx.NewClient(config),
+		Pdf:        pdf.NewClient(config),
 	}, nil
 }
