@@ -19,7 +19,7 @@ type ConfigProvider interface {
 func DataProcessing(conf ConfigProvider, data string, schema map[string]interface{}) (map[string]interface{}, error) {
 	chunks := chunkText(conf.GetMaxChunkSize(), data)
 	if len(chunks) > 10 {
-		return nil, fmt.Errorf("The content exceeds the allowed size of 50,000 characters per request")
+		return nil, fmt.Errorf("The content exceeds the allowed size of characters per request")
 	}
 
 	type chunkResult struct {

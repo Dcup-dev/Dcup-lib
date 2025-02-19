@@ -34,7 +34,7 @@ func main() {
 		"auther": "string",
 	}
 
-	res, err := client.Docx.CleanUrl("https://calibre-ebook.com/downloads/demos/demo.docx", schema)
+	res, err := client.Html.CleanUrl("https://www.kelche.co/blog/go/golang-environment-variables/", schema)
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
