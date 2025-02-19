@@ -6,6 +6,6 @@ type PptxClient struct {
 	config core.ConfigProvider
 }
 
-func NewHtmlClient(config core.ConfigProvider) *PptxClient {
+func NewPptxClient(config core.ConfigProvider) *PptxClient {
 	return &PptxClient{config: config}
 }

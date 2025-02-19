@@ -9,15 +9,17 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/json"
 	"github.com/Dcup-dev/Dcup-lib/internal/md"
 	"github.com/Dcup-dev/Dcup-lib/internal/pptx"
+	"github.com/Dcup-dev/Dcup-lib/internal/xlsx"
 )
 
 type Dcup struct {
-	Docx *docx.DocxClient
-	Csv  *csv.CsvClient
-	Html *html.HtmlClient
-	Json *json.JsonClient
-  Markdown *md.MdClient
-  PowerPoint *pptx.PptxClient
+	Docx       *docx.DocxClient
+	Csv        *csv.CsvClient
+	Html       *html.HtmlClient
+	Json       *json.JsonClient
+	Markdown   *md.MdClient
+	PowerPoint *pptx.PptxClient
+	Sheet      *xlsx.XlsxClient
 }
 
 // Config is the user-facing configuration struct.
@@ -67,11 +69,12 @@ func Init(config Config) (*Dcup, error) {
 	}
 
 	return &Dcup{
-		Docx: docx.NewDocxClient(config),
-		Csv:  csv.NewCsvClient(config),
-		Html: html.NewHtmlClient(config),
-		Json: json.NewHtmlClient(config),
-    Markdown: md.NewMdClient(config),
-    PowerPoint: pptx.NewHtmlClient(config),
+		Docx:       docx.NewDocxClient(config),
+		Csv:        csv.NewCsvClient(config),
+		Html:       html.NewHtmlClient(config),
+		Json:       json.NewHtmlClient(config),
+		Markdown:   md.NewMdClient(config),
+		PowerPoint: pptx.NewPptxClient(config),
+		Sheet:      xlsx.NewXlsxClient(config),
 	}, nil
 }
