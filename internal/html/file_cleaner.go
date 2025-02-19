@@ -10,7 +10,7 @@ import (
 )
 
 // CleanFile processes an HTML file and converts it into Markdown.
-func (h HtmlClient) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
+func (h Client) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
 	// Open the file
 	f, err := file.Open()
 	if err != nil {

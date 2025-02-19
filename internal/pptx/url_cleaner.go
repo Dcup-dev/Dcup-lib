@@ -9,8 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-
-func (p PptxClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (p Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	client := http.Client{
 		Timeout: 10 * time.Second,
 	}

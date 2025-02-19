@@ -9,7 +9,7 @@ import (
 	netHtml "golang.org/x/net/html"
 )
 
-func (h HtmlClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (h Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch URL: %v", err)

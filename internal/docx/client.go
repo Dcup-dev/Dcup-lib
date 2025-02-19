@@ -2,10 +2,10 @@ package docx
 
 import "github.com/Dcup-dev/Dcup-lib/internal/core"
 
-type DocxClient struct {
+type Client struct {
 	config core.ConfigProvider
 }
 
-func NewDocxClient(config core.ConfigProvider) *DocxClient {
-	return &DocxClient{config: config}
+func NewClient(config core.ConfigProvider) *Client {
+	return &Client{config: config}
 }

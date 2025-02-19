@@ -8,7 +8,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (c CsvClient) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
+func (c Client) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
 	// Open the file
 	f, err := file.Open()
 	if err != nil {

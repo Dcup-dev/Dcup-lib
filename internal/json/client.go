@@ -2,10 +2,10 @@ package json
 
 import "github.com/Dcup-dev/Dcup-lib/internal/core"
 
-type JsonClient struct {
+type Client struct {
 	config core.ConfigProvider
 }
 
-func NewHtmlClient(config core.ConfigProvider) *JsonClient {
-	return &JsonClient{config: config}
+func NewClient(config core.ConfigProvider) *Client {
+	return &Client{config: config}
 }

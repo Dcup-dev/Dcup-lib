@@ -2,10 +2,10 @@ package md
 
 import "github.com/Dcup-dev/Dcup-lib/internal/core"
 
-type MdClient struct {
+type Client struct {
 	config core.ConfigProvider
 }
 
-func NewMdClient(config core.ConfigProvider) *MdClient {
-	return &MdClient{config: config}
+func NewClient(config core.ConfigProvider) *Client {
+	return &Client{config: config}
 }

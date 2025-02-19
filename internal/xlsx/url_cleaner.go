@@ -9,7 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (x XlsxClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (x Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	client := http.Client{
 		Timeout: 10 * time.Second,
 	}

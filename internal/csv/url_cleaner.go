@@ -9,7 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (c CsvClient) CleanUlr(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (c Client) CleanUlr(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 
 	client := http.Client{
 		Timeout: 10 * time.Second,

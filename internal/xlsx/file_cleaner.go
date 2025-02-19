@@ -8,7 +8,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (x XlsxClient) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
+func (x Client) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
 	// Open the file
 	f, err := file.Open()
 	if err != nil {
@@ -27,5 +27,5 @@ func (x XlsxClient) CleanFile(file multipart.FileHeader, schema map[string]inter
 		return nil, err
 	}
 
-	return core.DataProcessing(x.config,core.CleanTextWithPreservation(mdText), schema)
+	return core.DataProcessing(x.config, core.CleanTextWithPreservation(mdText), schema)
 }

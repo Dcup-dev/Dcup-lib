@@ -9,7 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (j JsonClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (j Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	client := http.Client{
 		Timeout: 10 * time.Second,
 	}

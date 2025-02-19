@@ -9,9 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-
-
-func (d DocxClient) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
+func (d Client) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
 	f, err := file.Open()
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file: %s", file.Filename)

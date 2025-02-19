@@ -10,7 +10,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (d DocxClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (d Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	client := http.Client{
 		Timeout: 10 * time.Second,
 	}

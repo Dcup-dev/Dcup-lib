@@ -9,7 +9,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (m MdClient) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
+func (m Client) CleanUrl(url string, schema map[string]interface{}) (map[string]interface{}, error) {
 	client := http.Client{
 		Timeout: 10 * time.Second,
 	}

@@ -8,7 +8,7 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/core"
 )
 
-func (j JsonClient) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
+func (j Client) CleanFile(file multipart.FileHeader, schema map[string]interface{}) (map[string]interface{}, error) {
 	f, err := file.Open()
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file: %s", file.Filename)
