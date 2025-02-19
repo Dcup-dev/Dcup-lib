@@ -6,12 +6,14 @@ import (
 	"github.com/Dcup-dev/Dcup-lib/internal/csv"
 	"github.com/Dcup-dev/Dcup-lib/internal/docx"
 	"github.com/Dcup-dev/Dcup-lib/internal/html"
+	"github.com/Dcup-dev/Dcup-lib/internal/json"
 )
 
 type Dcup struct {
 	Docx *docx.DocxClient
 	Csv  *csv.CsvClient
 	Html *html.HtmlClient
+	Json *json.JsonClient
 }
 
 // Config is the user-facing configuration struct.
@@ -64,5 +66,6 @@ func Init(config Config) (*Dcup, error) {
 		Docx: docx.NewDocxClient(config),
 		Csv:  csv.NewCsvClient(config),
 		Html: html.NewHtmlClient(config),
+		Json: json.NewHtmlClient(config),
 	}, nil
 }
