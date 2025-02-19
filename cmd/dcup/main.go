@@ -1,9 +1,15 @@
 package dcup
 
-import "errors"
+import (
+	"errors"
+
+	"github.com/Dcup-dev/Dcup-lib/internal/csv"
+	"github.com/Dcup-dev/Dcup-lib/internal/docx"
+)
 
 type Dcup struct {
-	config Config
+	Docx *docx.DocxClient
+	Csv  *csv.CsvClient
 }
 
 // Config is the user-facing configuration struct.
@@ -53,6 +59,7 @@ func Init(config Config) (*Dcup, error) {
 	}
 
 	return &Dcup{
-		config: config,
+		Docx: docx.NewDocxClient(config),
+		Csv:  csv.NewCsvClient(config),
 	}, nil
 }
